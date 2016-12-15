@@ -1,12 +1,13 @@
 // Global Settings
 final color BACKGROUND = #F2FBFF;
 final color DEFAULT_COLOR = #000000;
-final int TARGET_FRAMERATE = 1000;
+final int TARGET_FRAMERATE = 100000;
 final float MASS_RADIUS_RATIO = 0.1;  // RADIUS = Mass * Ratio
 final int MIN_RADIUS = 5;
+final float SIM_SPEED = 3;
 
 // Constants
-final float G = 1;  // TODO: Replace with actual constant (6.67 E -11); see java.math.bigDecimal (?)
+final float G = 0.5;  // TODO: Replace with actual constant (6.67 E -11); see java.math.bigDecimal (?)
 
 void setup()
 {
@@ -17,8 +18,9 @@ void setup()
   
 }
 
-Planet[] planets = { new Planet(100,   30,   #FF8103,   new PVector(300, 300),   new PVector(30,   -3),     new PVector(0, 0)),
-                     new Planet(500,   60,   #FF8103,   new PVector(500, 500),   new PVector(-10,  -3),     new PVector(0, 0))  };
+Planet[] planets = { new Planet(10,     5,   #FF8103,   new PVector(300, 300),   new PVector(30,   -3),     new PVector(0, 0)),
+                     new Planet(500,    30,  #0EFF03,   new PVector(500, 500),   new PVector(-3,  -3),     new PVector(0, 0)),
+                     new Planet(100000, 10,  #000000,   new PVector(250, 250),   new PVector(-0,    0),     new PVector(0, 0))  };
 
 void draw()
 {
@@ -42,11 +44,11 @@ void draw()
     planets[i].acceleration.x = planets[i].acceleration.x * G;
     planets[i].acceleration.y = planets[i].acceleration.y * G;
     
-    planets[i].velocity.x += planets[i].acceleration.x / frameRate;
-    planets[i].velocity.y += planets[i].acceleration.y / frameRate;
+    planets[i].velocity.x += planets[i].acceleration.x / (frameRate / SIM_SPEED);
+    planets[i].velocity.y += planets[i].acceleration.y / (frameRate / SIM_SPEED);
     
-    planets[i].position.x += planets[i].velocity.x / frameRate;
-    planets[i].position.y += planets[i].velocity.y / frameRate;
+    planets[i].position.x += planets[i].velocity.x / (frameRate / SIM_SPEED);
+    planets[i].position.y += planets[i].velocity.y / (frameRate / SIM_SPEED);
   }
   
   
