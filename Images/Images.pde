@@ -33,7 +33,14 @@ void setup()
     {
       targetImg[x][y] = new Pixel((target[x][y] == 0 ? #ffffff : #000000));
     }
-  }  
+  }
+  
+  // Draw the sidebar
+  fill(0);
+  strokeWeight(1);
+  //stroke(#136F08);  // Dark green
+  
+  
 }
 
 Pixel[][] image;
