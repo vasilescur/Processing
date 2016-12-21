@@ -9,6 +9,9 @@ final float SIM_SPEED = 3;
 // Constants
 final float G = 0.5;  // TODO: Replace with actual constant (6.67 E -11); see java.math.bigDecimal (?)
 
+// Global variables
+int fr;  // Framerate buffer
+
 void setup()
 {
   size(800, 600);
@@ -58,14 +61,16 @@ void draw()
     planets[i].render();
   }
   
-  //if (frameCount % 10 == 0)
+  pushStyle();
+  fill(#ffffff);
+  rect(5, 5, 105, 25);
+  fill(0);
+  text("Framerate: " + fr, 10, 20);
+  popStyle();
+  
+  if (frameCount % 10 == 0)
   {
-    pushStyle();
-    fill(#ffffff);
-    rect(5, 5, 105, 25);
-    fill(0);
-    text("Framerate: " + round(frameRate), 10, 20);
-    popStyle();
+    fr = round(frameRate);
   }
 }
 
