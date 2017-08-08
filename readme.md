@@ -15,10 +15,10 @@ Brute force black and white image grid reverse search. You give it a pattern and
 ### UI_Framework
 
 This is a toy implementation of a framework for UI elements. Featuring buttons, text boxes, and more, it provides support for event handling using what is essentially lambda expressions but not really because Processing doesn't support those, so they're really Runnable objects. Still cool.
-
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
 What's Processing? Click [here](https://processing.org/) to find out!
