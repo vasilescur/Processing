@@ -1,6 +1,6 @@
 void setup()
 {
-  size(1000, 800);
+  size(400, 400);
   frameRate(10000000);
   
   // Setup the image array
@@ -44,10 +44,10 @@ void setup()
 }
 
 Pixel[][] image;
-int [][] target = {  {  0, 0, 0, 0  },
-                     {  0, 1, 1, 0  },
-                     {  0, 1, 1, 0  },
-                     {  0, 0, 0, 0  }   };
+int [][] target = {  {  1, 0, 1, 0  },      // This is sideways-- right in code is down in picture
+                     {  0, 0, 0, 1  },
+                     {  0, 0, 0, 1  },
+                     {  1, 0, 1, 0  }   };
 Pixel[][] targetImg;
 
 
