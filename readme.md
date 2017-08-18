@@ -8,7 +8,7 @@ Planets is a really cool n-body physics simulation of Newtonian planets floating
 
 ### Snake
 
-I made a 
+I made an implementation of the arcade game Snake 
 
 ### Images
 
